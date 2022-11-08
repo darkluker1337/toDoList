@@ -1,0 +1,26 @@
+import { Component } from "../../core";
+
+export class Button extends Component {
+
+ registerEvents(){
+  this.addEventListener('click',()=>{
+   this.dispatchEvent(this.props.eventtype)
+  })
+ }
+ 
+ 
+ 
+ static get observedAttributes(){
+   return ['content','className','eventtype']
+ }
+ 
+ 
+ render(){
+  const {content, classname} = this.props
+    return `
+     <button type='button' class="btn ${classname}">${content}</button>
+    `
+ }
+}
+
+customElements.define('my-button',Button)
