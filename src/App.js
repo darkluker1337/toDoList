@@ -1,21 +1,24 @@
 import { Component } from "./core";
-import './components/Button/Button.js'
 import {todoList} from './services/todoList/TodoList'
+import './components/moleculs/InputGroup/InputGroup'
 
 export class App extends Component {
 
 
 
   render() {
-    return (
-
-      `
+    return `
       <div class='container mt-5'>
-        <div class="input-group mb-3">
-          <input type="text" class="form-control" placeholder="Add a new task" aria-label="Recipient's username" aria-describedby="button-addon2">
-          <button class="btn btn-outline-primary" type="button" id="button-addon2">save</button>
-        </div>
-        <ul class="list-group">
+        <my-input-group></my-input-group>
+      </div>
+        `
+  }
+}
+
+customElements.define("my-app", App);
+
+
+{/* <ul class="list-group">
           <li class="list-group-item">
             <div class="form-check d-flex justify-content-between align-items-center">
               <div>
@@ -31,9 +34,4 @@ export class App extends Component {
             </div>
           </li>
         </ul>
-      </div>`
-    )
-  }
-}
-
-customElements.define("my-app", App);
+      </div> */}
