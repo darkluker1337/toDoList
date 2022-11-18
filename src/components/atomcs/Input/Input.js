@@ -30,10 +30,11 @@ export class Input extends Component{
   }
    
   componentDidMount(){
-   this.addEventListener('input', debounce(this.OnInput, 1000))
+   this.addEventListener('change', this.OnInput)
   }
-   
-   
+
+  
+
   render(){
     return ` 
     <input 
