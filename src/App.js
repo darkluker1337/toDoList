@@ -47,10 +47,23 @@ export class App extends Component {
       this.deleteTask(data.id)   
     }
   }
+  
+  
+  
+  updateTask = ({detail}) =>{
+    todoList
+    .updateTask(detail.id,{title: detail.title, isCompleted:false})
+    .then(()=>{
+      this.getTasks()
+    })
+  }
+  
+  
 
   componentDidMount(){
     this.getTasks()
     this.addEventListener('save-task',this.saveTask)
+    this.addEventListener('edit-task',this.updateTask)
     this.addEventListener('click',this.onClick)
 
   }

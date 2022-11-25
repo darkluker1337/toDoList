@@ -13,6 +13,10 @@ class TodoList {
     return this.database.read('tasks')
   }
   
+  updateTask(id,body){
+    return this.database.update('tasks',id,body)
+  }
+  
   deleteTask(id){
     return this.database.delete('tasks',id)
   }
